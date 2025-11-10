@@ -1,0 +1,17 @@
+{% extends "learning_logs/menu.html" %}
+
+{% block content %}
+<h2>Tópico: {{ topic.text }}</h2>  {# Mostra o título do tópico atual #}
+
+<p>Entradas:</p>
+<ul>
+    {% for entry in entries %}
+        <li>
+            <strong>{{ entry.date_added|date:"d/m/Y H:i" }}</strong><br>
+            {{ entry.text }}
+        </li>
+    {% empty %}
+        <li>Não há entradas para este tópico.</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

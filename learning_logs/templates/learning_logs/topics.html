@@ -1,0 +1,14 @@
+
+{% extends "learning_logs/menu.html" %}
+
+{% block content %}
+<ul>
+    {% for topic in topics %}
+        <li><strong><a href="{% url 'topic' topic.id %}">{{ topic.text }}</a></strong> <br>
+        Criado em: {{ topic.date_added|date:"d/m/Y H:i" }}</li>
+    {% empty %}
+        <li>Não há tópicos.</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
+

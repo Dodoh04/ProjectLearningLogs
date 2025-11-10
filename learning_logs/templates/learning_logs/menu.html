@@ -1,17 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Learning Log{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
 
-{% block content %}
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
 
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
 
-<a href="{% url 'index' %}"><h1>Learning Log</h1></a>
-        <br><br>
-    <a href="{% url 'index' %}">INICIO</a>
-    <br>
-    <a href="{% url 'pg2' %}">pagina 2</a>
-        <br>
-    <a href="{% url 'pg3' %}">pagina 3</a>
-        <br>
-    <a href="{% url 'pg4' %}">pagina 4</a>
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-{% endblock content %}
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-    
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #888;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="{% url 'index' %}" style="color: white; text-decoration: none;">Learning Log</a></h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'index' %}">Início</a>
+        <a href="{% url 'pg2' %}">Página 2</a>
+        <a href="{% url 'pg3' %}">Página 3</a>
+        <a href="{% url 'pg4' %}">Página 4</a>
+        <a href="{% url 'topics' %}">Tópicos</a>
+
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer>
+        &copy; 2025 - Projeto Learning Log
+    </footer>
+</body>
+</html>
