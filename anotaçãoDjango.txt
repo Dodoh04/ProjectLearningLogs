@@ -1,0 +1,5 @@
+. ll_env/scripts/activate   	(ativa)
+
+python manage.py runserver  	(inicializa)
+
+python manage.py createsuperuse 	(criar usuário admin)
